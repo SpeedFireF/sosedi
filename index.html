@@ -15,7 +15,10 @@
   <a class="skip-link" href="#article">Перейти к статье</a>
   <header class="site-header">
     <a class="brand" href="?page=main" aria-label="Соседи — на главную">
-      <span class="brand-mark" aria-hidden="true">С</span>
+      <span class="brand-mark" aria-hidden="true">
+        <span class="brand-fallback">С</span>
+        <img src="assets/logo.png" alt="" onload="this.parentElement.classList.add('has-logo')" onerror="this.remove()">
+      </span>
       <span><strong>Соседи</strong><small>энциклопедия сервера</small></span>
     </a>
     <form class="search" id="search-form" role="search">
