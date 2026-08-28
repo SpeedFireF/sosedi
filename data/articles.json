@@ -15,5 +15,20 @@
       {"src":"assets/event-placeholder.svg","alt":"Заполнитель изображения события","caption":"Здесь будет памятное событие"},
       {"src":"assets/build-placeholder.svg","alt":"Заполнитель изображения постройки","caption":"Здесь будет известная постройка"}
     ]
+  },
+  {
+    "slug":"sosedi-reborn",
+    "file":"articles/seasons/sosedi-reborn.md",
+    "title":"Sosedi: Reborn",
+    "type":"Текущий сезон",
+    "description":"Новый мир и текущая глава истории сервера «Соседи».",
+    "isSeason":true,
+    "season":"sosedi-reborn",
+    "categories":["Sosedi: Reborn","Сезоны"],
+    "keywords":["reborn","реборн","сезон","текущий сезон","новый мир"],
+    "updated":"2026-08-28",
+    "change":"Добавлена страница сезона",
+    "infobox":{"title":"Sosedi: Reborn","image":"assets/server-placeholder.svg","imageAlt":"Заполнитель изображения сезона Sosedi: Reborn","fields":{"Серия":"Соседи","Тип":"Сезон","Статус":"Текущий","Версия":"Заполнить позже","Модпак":"Заполнить позже","Начало":"Заполнить позже"}},
+    "gallery":[]
   }
 ]
