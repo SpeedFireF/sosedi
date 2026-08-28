@@ -1,26 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Pages Test</title>
+  <meta name="description" content="Соседи — энциклопедия нашего Minecraft-сервера.">
+  <meta name="theme-color" content="#f3f5f7">
+  <title>Соседи — энциклопедия сервера</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <span class="badge">GitHub Pages</span>
-    <h1>My test page is working!</h1>
-    <p id="message">The HTML and CSS loaded successfully.</p>
-
-    <button id="test-button" type="button">
-      Test JavaScript (<span id="click-count">0</span>)
-    </button>
-
-    <p class="status" id="status" aria-live="polite">
-      Click the button to test the script.
-    </p>
-  </main>
-
+  <a class="skip-link" href="#article">Перейти к статье</a>
+  <header class="site-header">
+    <a class="brand" href="?page=main" aria-label="Соседи — на главную">
+      <span class="brand-mark" aria-hidden="true">С</span>
+      <span><strong>Соседи</strong><small>энциклопедия сервера</small></span>
+    </a>
+    <form class="search" id="search-form" role="search">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+      <input id="search-input" type="search" placeholder="Поиск по энциклопедии…" autocomplete="off" aria-label="Поиск по энциклопедии">
+      <kbd>Ctrl K</kbd><div class="search-results" id="search-results" hidden></div>
+    </form>
+    <div class="header-actions">
+      <button class="icon-button" id="theme-button" type="button" aria-label="Переключить тему" title="Переключить тему"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
+      <a class="edit-button" id="edit-link" href="https://github.com/SpeedFireF/sosedi/edit/main/articles/main.md" target="_blank" rel="noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg><span>Редактировать</span></a>
+      <button class="icon-button menu-button" id="menu-button" type="button" aria-label="Открыть меню" aria-expanded="false"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+  <div class="wiki-shell">
+    <aside class="sidebar" id="sidebar">
+      <nav aria-label="Основная навигация">
+        <p class="nav-label">Энциклопедия</p>
+        <a class="nav-link active" href="?page=main"><span aria-hidden="true">⌂</span>Главная</a>
+        <button class="nav-link" id="all-pages-button" type="button"><span aria-hidden="true">≡</span>Все страницы</button>
+        <p class="nav-label">Разделы</p><div id="category-nav"></div>
+        <p class="nav-label">Участие</p>
+        <a class="nav-link" href="https://github.com/SpeedFireF/sosedi" target="_blank" rel="noreferrer"><span aria-hidden="true">↗</span>Репозиторий</a>
+        <a class="nav-link" href="https://github.com/SpeedFireF/sosedi/tree/main/articles" target="_blank" rel="noreferrer"><span aria-hidden="true">＋</span>Новая статья</a>
+      </nav>
+      <div class="sidebar-note"><strong>Хотите помочь?</strong><p>Исправляйте статьи прямо через GitHub.</p></div>
+    </aside>
+    <main class="content-column">
+      <nav class="breadcrumbs" id="breadcrumbs" aria-label="Хлебные крошки"></nav>
+      <div class="loading-state" id="loading-state"><span></span><span></span><span></span><p>Загружаем статью…</p></div>
+      <article class="article" id="article" hidden>
+        <header class="article-header">
+          <div><p class="article-kicker" id="article-kicker"></p><h1 id="article-title"></h1><p class="article-description" id="article-description"></p></div>
+          <button class="quiet-button" id="share-button" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8.59 13.51 15.42 17m-.01-10-6.82 3.49M18 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm9 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>Поделиться</button>
+        </header>
+        <div class="article-layout">
+          <div class="article-main">
+            <div class="mobile-toc" id="mobile-toc"></div><div class="markdown-body" id="article-body"></div>
+            <section class="gallery-section" id="gallery-section" hidden><h2>Галерея</h2><div class="gallery" id="gallery"></div></section>
+            <footer class="article-footer"><div class="categories" id="article-categories"></div><p id="updated-at"></p></footer>
+          </div>
+          <aside class="article-aside"><section class="infobox" id="infobox"></section><nav class="toc" aria-label="Содержание"><p class="toc-title">Содержание</p><ol id="toc-list"></ol></nav></aside>
+        </div>
+      </article>
+      <section class="panel" id="directory-panel" hidden>
+        <div class="panel-header"><div><p class="article-kicker">Навигация</p><h1>Все страницы</h1></div><button class="icon-button" id="close-directory" type="button" aria-label="Закрыть">×</button></div>
+        <div class="filter-chips" id="filter-chips"></div><div class="article-grid" id="article-grid"></div>
+      </section>
+      <section class="bottom-grid" id="bottom-grid">
+        <div class="info-panel"><div class="section-heading"><div><span>Обзор</span><h2>Свежие изменения</h2></div><a href="https://github.com/SpeedFireF/sosedi/commits/main" target="_blank" rel="noreferrer">История →</a></div><div class="changes-list" id="recent-changes"></div></div>
+        <div class="info-panel accent-panel"><span class="panel-icon" aria-hidden="true">✦</span><h2>Энциклопедия растёт вместе с сервером</h2><p>Каждый участник может сохранить историю мира: добавить место, событие или персонажа.</p><a class="primary-button" href="https://github.com/SpeedFireF/sosedi/tree/main/articles" target="_blank" rel="noreferrer">Создать статью</a></div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div><div class="sidebar-backdrop" id="sidebar-backdrop"></div>
   <script src="script.js"></script>
 </body>
 </html>
