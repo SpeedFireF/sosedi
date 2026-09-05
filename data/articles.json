@@ -30,5 +30,19 @@
     "change":"Добавлена страница сезона",
     "infobox":{"title":"Sosedi: Reborn","image":"assets/server-placeholder.svg","imageAlt":"Заполнитель изображения сезона Sosedi: Reborn","fields":{"Серия":"Соседи","Тип":"Сезон","Статус":"Текущий","Версия":"Заполнить позже","Модпак":"Заполнить позже","Начало":"Заполнить позже"}},
     "gallery":[]
+  },
+  {
+    "slug":"artemu-pizda",
+    "file":"articles/sosedi-reborn/artemu-pizda.md",
+    "title":"artemu pizda",
+    "type":"Страница сезона",
+    "description":"Minecraft-скриншот из сезона Sosedi: Reborn.",
+    "season":"sosedi-reborn",
+    "categories":["Sosedi: Reborn","Скриншоты"],
+    "keywords":["artemu pizda","артему пизда","minecraft","скриншот"],
+    "updated":"2026-09-05",
+    "change":"Добавлена страница «artemu pizda»",
+    "infobox":{"title":"artemu pizda","image":"assets/artemu-pizda.png","imageAlt":"Minecraft-скриншот с надписью artemu pizda","fields":{"Сезон":"Sosedi: Reborn","Игра":"Minecraft","Тип":"Скриншот"}},
+    "gallery":[]
   }
 ]
